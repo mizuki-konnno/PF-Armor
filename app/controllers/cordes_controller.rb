@@ -1,0 +1,2 @@
+class CordesController < ApplicationController
+end
