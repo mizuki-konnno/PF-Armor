@@ -1,0 +1,29 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <div class="topfont">
+          <%= link_to 'Armor',root_path, class: "navbar-brand" %>
+        </div>
+        <!-- ハンバーガーメニュー -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- ナビゲーションメニュー -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <% if user_signed_in? %>
+              <li><%= link_to ' Home',root_path,class: 'nav-link text-info h4' %></li>
+              <li><%= link_to ' MyPage',user_path(current_user.id),class: 'nav-link text-info h4' %></li>
+              <li><%= link_to ' Timer!',root_path, data: { 'turbolinks': false },class: 'nav-link text-info h4'%></li>
+              <li><%= link_to ' logout', destroy_user_session_path, method: :delete,class: 'nav-link text-info h4' %></li>
+            <% else %>
+              <li><%= link_to ' Home',root_path,class: 'nav-link text-info h4' %></li>
+              <li><%= link_to ' About',root_path,class: 'nav-link text-info h4' %></li>
+              <li><%= link_to ' sign up', new_user_registration_path,class: 'nav-link text-info h4' %></li>
+              <li><%= link_to ' login', new_user_session_path ,class: 'nav-link text-info h4'%></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</header>
