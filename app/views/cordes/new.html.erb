@@ -4,4 +4,27 @@
       　<h1>コーデ新規投稿</h1>
     </div>
   </div>
+  <div class = "row">
+    <div class = "col text-center" >
+      <%= form_with model: @corde, local:true do |f| %>
+      <table class = "table my-5" >
+        <tr>
+          <td><%= f.label :corde_image, "画像" %></td>
+          <td><%= f.attachment_field :corde_image, placeholder: "corde画像" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :title, "タイトル" %></td>
+          <td><%= f.text_field :title, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :caption, "説明" %></td>
+          <td><%= f.text_area :caption, rows: 3, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "text-center"><%= f.submit "新規投稿", class: "btn btn-success btn-lg" %></td>
+        </tr>
+      </table>
+      <% end %>
+    </div>
+  </div>
 </div>

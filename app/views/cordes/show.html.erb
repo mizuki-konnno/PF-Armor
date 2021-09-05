@@ -1,7 +1,33 @@
 <div class = "container">
   <div class = "row">
-    <div class = "col text-center my-3">
+    <div class = "col text-center my-5">
       　<h1>コーデ詳細</h1>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col">
+      <table class = "table text-center my-5">
+        <tr>
+          <td><%= attachment_image_tag(@corde, :corde_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
+        </tr>
+        <tr>
+          <td>タイトル</td>
+        </tr>
+        <tr>
+          <td><%= @corde.title %></td>
+        </tr>
+        <tr>
+          <td>説明</td>
+        </tr>
+        <tr>
+          <td><%= @corde.caption %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col text-center">
+      <%= link_to "コーデ一覧に戻る", root_path, class: "btn btn-link" %>
     </div>
   </div>
 </div>
