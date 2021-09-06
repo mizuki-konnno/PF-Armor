@@ -1,7 +1,48 @@
 <div class = "container">
   <div class = "row">
     <div class = "col text-center my-3">
-      　<h1>MyPage</h1>
+      　<h1><%= @user.name %>is MyPage</h1>
+    </div>
+  </div>
+  <div class = "row" >
+    <div class = "col text-center" >
+      <%= link_to "MyPage編集", edit_user_path(@user), class:"btn btn-link" %>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col">
+       <table class="table my-3 text-center">
+        <tr>
+          <td colspan="2"><%= attachment_image_tag(@user, :profile_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
+        </tr>
+        <tr>
+          <td>氏名</td>
+          <td><%= @user.name %></td>
+        </tr>
+
+        <tr>
+          <td>性別</td>
+          <td><%= @user.gender %></td>
+        </tr>
+
+        <tr>
+          <td>身長</td>
+          <td><%= @user.height %>cm</td>
+        </tr>
+        <tr>
+          <td colspan="2">マイプロフィール</td>
+        </tr>
+        <tr>
+          <td colspan="2"><%= @user.introduction %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class = "row" >
+    <div class = "col text-center" >
+      <% if @user == current_user %>
+        <%= link_to "Other Usersへ戻る", users_path, class:"btn btn-link" %>
+      <% end %>
     </div>
   </div>
 </div>
