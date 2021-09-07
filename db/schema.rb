@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_03_081616) do
+ActiveRecord::Schema.define(version: 2021_09_07_062835) do
 
   create_table "clothes", force: :cascade do |t|
     t.text "title"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_09_03_081616) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_09_03_081616) do
     t.string "profile_image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  
+  end
 
   create_table "wish_lists", force: :cascade do |t|
     t.text "title"

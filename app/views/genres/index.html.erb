@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class = "row">
-    <div class = "col-4">
+    <div class = "col-4 mx-auto">
       <table class = "table">
         <%= form_with model: @genre, local:true do |f| %>
         <tr>
@@ -23,10 +23,10 @@
     </div>
 
 
-    <div class = "col-8">
+    <div class = "col-6 text-center mx-auto">
       <table class = "table">
         <tr>
-          <td>ジャンル</td>
+          <th>ジャンル</th>
         </tr>
         <% @genres.each do |genre| %>
         <tr>
