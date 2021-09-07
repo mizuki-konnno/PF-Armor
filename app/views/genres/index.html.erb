@@ -1,7 +1,39 @@
+
 <div class = "container">
   <div class = "row">
-    <div class = "col text-center my-3">
-      　<h1>ジャンル一覧</h1>
+    <div class = "col text-center my-5">
+      <h1>ジャンル一覧・追加</h1>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-4">
+      <table class = "table">
+        <%= form_with model: @genre, local:true do |f| %>
+        <tr>
+          <td><%= f.label :name, "ジャンル名" %></td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :name,  class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <td><%= f.submit "新規登録", class: "btn btn-link"%></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+
+
+    <div class = "col-8">
+      <table class = "table">
+        <tr>
+          <td>ジャンル</td>
+        </tr>
+        <% @genres.each do |genre| %>
+        <tr>
+          <td><%= genre.name %></td>
+        </tr>
+        <% end %>
+      </table>
     </div>
   </div>
 </div>

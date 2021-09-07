@@ -14,7 +14,7 @@
             <% if user_signed_in? %>
               <li><%= link_to ' Home',root_path,class: 'nav-link text-info h4' %></li>
               <li><%= link_to ' MyPage',user_path(current_user.id),class: 'nav-link text-info h4' %></li>
-              <li><%= link_to ' Timer!',root_path, data: { 'turbolinks': false },class: 'nav-link text-info h4'%></li>
+              <li><%= link_to ' Users',users_path, data: { 'turbolinks': false },class: 'nav-link text-info h4'%></li>
               <li><%= link_to ' logout', destroy_user_session_path, method: :delete,class: 'nav-link text-info h4' %></li>
             <% else %>
               <li><%= link_to ' Home',root_path,class: 'nav-link text-info h4' %></li>
