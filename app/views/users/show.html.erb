@@ -40,8 +40,13 @@
   </div>
   <div class = "row" >
     <div class = "col text-center" >
-      <% if @user == current_user %>
         <%= link_to "Other Usersへ戻る", users_path, class:"btn btn-link" %>
+    </div>
+  </div>
+    <div class = "row" >
+    <div class = "col text-center" >
+      <% if @user == current_user %>
+        <%= link_to "クローゼット一覧", clothes_path, class:"btn btn-link" %>
       <% end %>
     </div>
   </div>
