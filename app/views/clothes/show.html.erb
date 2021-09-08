@@ -5,6 +5,13 @@
     </div>
   </div>
   <div class = "row">
+    <div class = "col text-center">
+      <% if @clothe.user_id == current_user.id %>
+      　<%= link_to "削除", clothe_path(@clothe), class: "btn btn-link", method: :delete %>
+      <% end %>
+    </div>
+  </div>
+  <div class = "row">
     <div class = "col">
       <table class = "table text-center my-5">
         <tr>

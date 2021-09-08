@@ -5,6 +5,13 @@
     </div>
   </div>
   <div class = "row">
+    <div class = "col text-center">
+      <% if @wish_list.user_id == current_user.id %>
+      　<%= link_to "削除", wish_list_path(@wish_list), class: "btn btn-link", method: :delete %>
+      <% end %>
+    </div>
+  </div>
+  <div class = "row">
     <div class = "col">
       <table class = "table text-center my-5">
         <tr>

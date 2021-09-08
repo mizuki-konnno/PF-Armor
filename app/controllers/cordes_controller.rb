@@ -20,12 +20,15 @@ class CordesController < ApplicationController
   end
 
   def destroy
+    @corde = Corde.find(params[:id])
+    @corde.destroy
+    redirect_to cordes_path
   end
 
   private
 
   def corde_params
-    params.require(:corde).permit(:title, :caption, :corde_image_id)
+    params.require(:corde).permit(:title, :caption, :corde_image)
   end
 
 end
