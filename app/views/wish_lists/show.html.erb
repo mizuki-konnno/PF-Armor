@@ -4,4 +4,30 @@
       　<h1>詳細</h1>
     </div>
   </div>
+  <div class = "row">
+    <div class = "col">
+      <table class = "table text-center my-5">
+        <tr>
+          <td><%= attachment_image_tag(@wish_list, :wish_list_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
+        </tr>
+        <tr>
+          <th>タイトル</th>
+        </tr>
+        <tr>
+          <td><%= @wish_list.title %></td>
+        </tr>
+        <tr>
+          <th>ブランド名</th>
+        </tr>
+        <tr>
+          <td><%= @wish_list.brand %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col text-center">
+      <%= link_to "一覧に戻る", wish_lists_path, class: "btn btn-link" %>
+    </div>
+  </div>
 </div>

@@ -9,7 +9,7 @@ class ClothesController < ApplicationController
   end
 
   def show
-    @clethe = Clothe.find(params[:id])
+    @clothe = Clothe.find(params[:id])
   end
 
   def create
@@ -25,7 +25,7 @@ class ClothesController < ApplicationController
   private
 
   def clothe_params
-    params.require(:clothe).permit(:title, :brand, :clothes_image, :caption)
+    params.require(:clothe).permit(:title, :brand, :clothes_image, :caption, :genre_id)
   end
 
 end

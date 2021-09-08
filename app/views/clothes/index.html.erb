@@ -13,7 +13,7 @@
     <% @clothes.each do |clothe| %>
     <div class = "col-2">
       <%= link_to clothe_path(clothe.id) do %>
-      <%= attachment_image_tag(clothe, :clothe_image, size: "120x150", fallback: "no_image.jpg") %>
+      <%= attachment_image_tag(clothe, :clothes_image, size: "120x150", fallback: "no_image.jpg") %>
       <% end %>
     </div>
     <% end %>

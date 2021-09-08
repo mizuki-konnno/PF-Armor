@@ -11,28 +11,28 @@
           <td><%= attachment_image_tag(@clothe, :clothes_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
         </tr>
         <tr>
-          <td>タイトル</td>
+          <th>タイトル</th>
         </tr>
         <tr>
           <td><%= @clothe.title %></td>
         </tr>
         <tr>
-          <td>ブランド名</td>
+          <th>ブランド名</th>
         </tr>
         <tr>
           <td><%= @clothe.brand %></td>
         </tr>
         <tr>
-          <td>ジャンル</td>
+          <th>ジャンル</th>
         </tr>
         <tr>
-          <td><%= @clothe.genres.name %></td>
+          <td><%= @clothe.genre.name %></td>
         </tr>
         <tr>
-          <td>説明</td>
+          <th>説明</th>
         </tr>
         <tr>
-          <td><%= @corde.caption %></td>
+          <td><%= @clothe.caption %></td>
         </tr>
       </table>
     </div>

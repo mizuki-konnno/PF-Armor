@@ -3,6 +3,6 @@ class Clothe < ApplicationRecord
   belongs_to :user
   belongs_to :genre
 
-  attachment :clothe_image
+  attachment :clothes_image
 
 end

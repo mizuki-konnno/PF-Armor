@@ -4,4 +4,27 @@
       　<h1>ほしい物リスト登録</h1>
     </div>
   </div>
+  <div class = "row">
+    <div class = "col text-center" >
+      <%= form_with model: @wish_list, local:true do |f| %>
+      <table class = "table my-5" >
+        <tr>
+          <td><%= f.label :wish_list_image, "画像" %></td>
+          <td><%= f.attachment_field :wish_list_image, placeholder: "clothe画像" %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :title, "タイトル" %></td>
+          <td><%= f.text_field :title, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :brand, "ブランド名" %></td>
+          <td><%= f.text_field :brand, class: 'form-control' %></td>
+        </tr>
+        <tr>
+          <td colspan = "2" class = "text-center"><%= f.submit "新規投稿", class: "btn btn-success btn-lg" %></td>
+        </tr>
+      </table>
+      <% end %>
+    </div>
+  </div>
 </div>
