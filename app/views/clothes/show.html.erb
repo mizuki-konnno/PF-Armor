@@ -4,4 +4,42 @@
       　<h1>詳細</h1>
     </div>
   </div>
+  <div class = "row">
+    <div class = "col">
+      <table class = "table text-center my-5">
+        <tr>
+          <td><%= attachment_image_tag(@clothe, :clothes_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
+        </tr>
+        <tr>
+          <td>タイトル</td>
+        </tr>
+        <tr>
+          <td><%= @clothe.title %></td>
+        </tr>
+        <tr>
+          <td>ブランド名</td>
+        </tr>
+        <tr>
+          <td><%= @clothe.brand %></td>
+        </tr>
+        <tr>
+          <td>ジャンル</td>
+        </tr>
+        <tr>
+          <td><%= @clothe.genres.name %></td>
+        </tr>
+        <tr>
+          <td>説明</td>
+        </tr>
+        <tr>
+          <td><%= @corde.caption %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col text-center">
+      <%= link_to "一覧に戻る", clothes_path, class: "btn btn-link" %>
+    </div>
+  </div>
 </div>

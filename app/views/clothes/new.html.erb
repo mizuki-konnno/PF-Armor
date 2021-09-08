@@ -26,6 +26,10 @@
           <td><%= f.text_field :brand, class: 'form-control' %></td>
         </tr>
         <tr>
+          <td><%= f.label :genre_id, "ジャンル" %></td>
+          <td><%= f.collection_select :genre_id, @genres, :id, :name, class: 'form-control' %></td>
+        </tr>
+        <tr>
           <td><%= f.label :caption, "説明" %></td>
           <td><%= f.text_area :caption, rows: 3, class: 'form-control' %></td>
         </tr>
