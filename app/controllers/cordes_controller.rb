@@ -1,5 +1,7 @@
 class CordesController < ApplicationController
 
+  before_action :authenticate_user!,except: [:index]
+
   def  index
     @cordes = Corde.all
   end

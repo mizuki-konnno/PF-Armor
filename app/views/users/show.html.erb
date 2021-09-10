@@ -5,12 +5,18 @@
     </div>
   </div>
   <div class = "row" >
-    <div class = "col text-center" >
-      <%= link_to "MyPage編集", edit_user_path(@user), class:"btn btn-link" %>
-    </div>
+    <% if @user == current_user %>
+      <div class = "col text-center my-5" >
+        <%= link_to "MyPage編集", edit_user_path(@user), class:"btn btn-outline-secondary" %>
+      </div>
+    <% else %>
+      <div class = "col text-center my-5" >
+        <%= link_to "Other Users", users_path, class:"btn btn-outline-secondary" %>
+      </div>
+    <% end %>
   </div>
   <div class = "row">
-    <div class = "col">
+    <div class = "col-8 mx-auto">
        <table class="table my-3 text-center">
         <tr>
           <td colspan="2"><%= attachment_image_tag(@user, :profile_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
@@ -38,22 +44,20 @@
       </table>
     </div>
   </div>
-  <div class = "row" >
-    <div class = "col text-center" >
-        <%= link_to "Other Users", users_path, class:"btn btn-link" %>
-    </div>
-  </div>
-  <div class = "row" >
-    <div class = "col text-center" >
+  <div class = "row my-5" >
+    <div class = "col-3 text-center mx-auto" >
       <% if @user == current_user %>
-        <%= link_to "クローゼット一覧", clothes_path, class:"btn btn-link" %>
+        <%= link_to "Other Users", users_path, class:"btn btn-outline-secondary" %>
       <% end %>
     </div>
-  </div>
-  <div class = "row" >
-    <div class = "col text-center" >
+    <div class = "col-3 text-center mx-auto" >
       <% if @user == current_user %>
-        <%= link_to "欲しいものリスト", wish_lists_path, class:"btn btn-link" %>
+        <%= link_to "クローゼット一覧", clothes_path, class:"btn btn-outline-secondary" %>
+      <% end %>
+    </div>
+    <div class = "col-3 text-center mx-auto" >
+      <% if @user == current_user %>
+        <%= link_to "欲しいものリスト", wish_lists_path, class:"btn btn-outline-secondary" %>
       <% end %>
     </div>
   </div>

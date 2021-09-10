@@ -7,34 +7,38 @@
   <div class = "row">
     <div class = "col text-center">
       <% if @corde.user_id == current_user.id %>
-      　<%= link_to "削除", corde_path(@corde), class: "btn btn-link", method: :delete %>
+      　<%= link_to "削除", corde_path(@corde), class: "btn btn-outline-secondary ", method: :delete %>
       <% end %>
     </div>
   </div>
   <div class = "row">
-    <div class = "col">
+    <div class = "col-8 mx-auto">
       <table class = "table text-center my-5">
         <tr>
-          <td><%= attachment_image_tag(@corde, :corde_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
+          <td colspan = "2"><%= attachment_image_tag(@corde, :corde_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
         </tr>
         <tr>
-          <td>タイトル</td>
+          <th colspan = "2">タイトル</th>
         </tr>
         <tr>
-          <td><%= @corde.title %></td>
+          <td colspan = "2"><%= @corde.title %></td>
         </tr>
         <tr>
-          <td>説明</td>
+          <th colspan = "2">説明</th>
         </tr>
         <tr>
-          <td><%= @corde.caption %></td>
+          <td colspan = "2"><%= @corde.caption %></td>
+        </tr>
+        <tr>
+          <td>投稿者</td>
+          <td><%= link_to @corde.user.name, user_path(@corde.user) %></td>
         </tr>
       </table>
     </div>
   </div>
   <div class = "row">
     <div class = "col text-center">
-      <%= link_to "コーデ一覧に戻る", root_path, class: "btn btn-link" %>
+      <%= link_to "コーデ一覧に戻る", root_path, class: "btn btn-outline-secondary " %>
     </div>
   </div>
 </div>

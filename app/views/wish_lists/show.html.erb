@@ -7,12 +7,12 @@
   <div class = "row">
     <div class = "col text-center">
       <% if @wish_list.user_id == current_user.id %>
-      　<%= link_to "削除", wish_list_path(@wish_list), class: "btn btn-link", method: :delete %>
+      　<%= link_to "削除", wish_list_path(@wish_list), class: "btn btn-outline-secondary", method: :delete %>
       <% end %>
     </div>
   </div>
   <div class = "row">
-    <div class = "col">
+    <div class = "col-8 mx-auto">
       <table class = "table text-center my-5">
         <tr>
           <td><%= attachment_image_tag(@wish_list, :wish_list_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
@@ -34,7 +34,7 @@
   </div>
   <div class = "row">
     <div class = "col text-center">
-      <%= link_to "一覧に戻る", wish_lists_path, class: "btn btn-link" %>
+      <%= link_to "一覧に戻る", wish_lists_path, class: "btn btn-outline-secondary" %>
     </div>
   </div>
 </div>

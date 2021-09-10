@@ -5,36 +5,37 @@
     </div>
   </div>
   <div class = "row" >
-    <div class = "col text-center" >
-        <%= link_to "ジャンル追加", genres_path, class:"btn btn-link" %>
+    <div class = "col text-center mx-auto" >
+      <%= link_to "戻る", :back, class:"btn btn-outline-secondary" %>
     </div>
   </div>
    <div class = "row">
-    <div class = "col text-center" >
+    <div class = "col-8 text-center mx-auto" >
       <%= form_with model: @clothe, local:true do |f| %>
       <table class = "table my-5" >
         <tr>
           <td><%= f.label :clothes_image, "画像" %></td>
-          <td><%= f.attachment_field :clothes_image, placeholder: "clothe画像" %></td>
+          <td colspan = "2"><%= f.attachment_field :clothes_image, placeholder: "clothe画像" %></td>
         </tr>
         <tr>
           <td><%= f.label :title, "タイトル" %></td>
-          <td><%= f.text_field :title, class: 'form-control' %></td>
+          <td colspan = "2"><%= f.text_field :title, class: 'form-control' %></td>
         </tr>
         <tr>
           <td><%= f.label :brand, "ブランド名" %></td>
-          <td><%= f.text_field :brand, class: 'form-control' %></td>
+          <td colspan = "2"><%= f.text_field :brand, class: 'form-control' %></td>
         </tr>
         <tr>
           <td><%= f.label :genre_id, "ジャンル" %></td>
           <td><%= f.collection_select :genre_id, @genres, :id, :name, class: 'form-control' %></td>
+          <td><%= link_to "ジャンル追加", genres_path, class:"btn btn-outline-secondary" %></td>
         </tr>
         <tr>
           <td><%= f.label :caption, "説明" %></td>
-          <td><%= f.text_area :caption, rows: 3, class: 'form-control' %></td>
+          <td colspan = "2"><%= f.text_area :caption, rows: 3, class: 'form-control' %></td>
         </tr>
         <tr>
-          <td colspan = "2" class = "text-center"><%= f.submit "新規投稿", class: "btn btn-success btn-lg" %></td>
+          <td colspan = "3" class = "text-center"><%= f.submit "新規投稿", class: "btn btn-outline-secondary btn-lg mt-5" %></td>
         </tr>
       </table>
       <% end %>

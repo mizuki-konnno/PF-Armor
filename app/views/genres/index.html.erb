@@ -7,8 +7,8 @@
   </div>
   <div class = "row">
     <div class = "col-4 mx-auto">
+      <%= form_with model: @genre, local:true do |f| %>
       <table class = "table">
-        <%= form_with model: @genre, local:true do |f| %>
         <tr>
           <td><%= f.label :name, "ジャンル名" %></td>
         </tr>
@@ -16,10 +16,10 @@
           <td><%= f.text_field :name,  class: 'form-control' %></td>
         </tr>
         <tr>
-          <td><%= f.submit "新規登録", class: "btn btn-link"%></td>
+          <td><%= f.submit "新規登録", class: "btn btn-outline-secondary"%></td>
         </tr>
-        <% end %>
       </table>
+      <% end %>
     </div>
 
 
@@ -34,6 +34,11 @@
         </tr>
         <% end %>
       </table>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col text-center">
+      <%= link_to "戻る", :back, class: "btn btn-outline-secondary mt-5" %>
     </div>
   </div>
 </div>

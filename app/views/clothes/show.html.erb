@@ -5,14 +5,14 @@
     </div>
   </div>
   <div class = "row">
-    <div class = "col text-center">
+    <div class = "col text-center ">
       <% if @clothe.user_id == current_user.id %>
-      　<%= link_to "削除", clothe_path(@clothe), class: "btn btn-link", method: :delete %>
+      　<%= link_to "削除", clothe_path(@clothe), class: "btn btn-outline-secondary", method: :delete %>
       <% end %>
     </div>
   </div>
   <div class = "row">
-    <div class = "col">
+    <div class = "col-8 mx-auto">
       <table class = "table text-center my-5">
         <tr>
           <td><%= attachment_image_tag(@clothe, :clothes_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
@@ -46,7 +46,7 @@
   </div>
   <div class = "row">
     <div class = "col text-center">
-      <%= link_to "一覧に戻る", clothes_path, class: "btn btn-link" %>
+      <%= link_to "一覧に戻る", clothes_path, class: "btn btn-outline-secondary" %>
     </div>
   </div>
 </div>

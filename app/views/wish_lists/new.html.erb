@@ -5,7 +5,12 @@
     </div>
   </div>
   <div class = "row">
-    <div class = "col text-center" >
+    <div class = "col text-center">
+      　<%= link_to "戻る", :back, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+  <div class = "row">
+    <div class = "col-8 text-center mx-auto" >
       <%= form_with model: @wish_list, local:true do |f| %>
       <table class = "table my-5" >
         <tr>
@@ -21,7 +26,7 @@
           <td><%= f.text_field :brand, class: 'form-control' %></td>
         </tr>
         <tr>
-          <td colspan = "2" class = "text-center"><%= f.submit "新規投稿", class: "btn btn-success btn-lg" %></td>
+          <td colspan = "2" class = "text-center"><%= f.submit "新規投稿", class: "btn btn-outline-secondary my-5" %></td>
         </tr>
       </table>
       <% end %>
