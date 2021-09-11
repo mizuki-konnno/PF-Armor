@@ -46,3 +46,30 @@
   background-size: cover;
   background-position: center;
 }
+
+/* スクロール時のフェードイン用のCSS (jQuery使用) */
+.slide-bottom {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: all 1.3s 0s ease-out;
+ }
+
+ /*下からフェードイン*/
+.fade-in-bottom {
+   opacity: 0;
+   animation-name: fadein-bottom;
+   animation-duration: 1.5s;
+   animation-timing-function: ease-out;
+   animation-fill-mode: forwards;
+}
+@keyframes fadein-bottom {
+   0% {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+

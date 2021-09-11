@@ -1,6 +1,6 @@
 class ClothesController < ApplicationController
   def index
-    @clothes = current_user.clothes
+    @clothes = current_user.clothes.page(params[:page]).per(18)
   end
 
   def new

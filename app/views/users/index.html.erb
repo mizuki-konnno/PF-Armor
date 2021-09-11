@@ -1,4 +1,4 @@
-<div class = "container">
+<div class = "container fade-in-bottom">
   <div class = "row">
     <div class = "col text-center my-5">
       　<h1>User 一覧</h1>
@@ -16,10 +16,29 @@
               <h4 class = "card-title"><%= link_to user.name, user_path(user) %></h4>
               <P><%= user.gender %></P>
               <p>身長<%= user.height %>cm</p>
+              <p id="followings_count_<%= user.id %>">
+                  <!--＠userが何も入ってない場合はcurrent_user_idが入る-->
+                  <% user ||= current_user %>
+                  フォロー数 <%= link_to user.followings.count,user_followings_path(user) %>
+                </p>
+                <p id="followers_count_<%= user.id %>">
+                  <% user ||= current_user %>
+                  フォロワー数 <%= link_to user.followers.count,user_followers_path(user) %>
+                </p>
+                <% unless current_user == user %>
+                <p id="follow_button_<%= user.id %>">
+                  <%= render partial: 'relationships/follow_button', locals: {user: user} %>
+                </p>
+                <% end %>
             </div>
           </div>
         </div>
     </div>
     <% end %>
+  </div>
+  <div class = "row my-5" >
+    <div class = "col-3 mx-auto" >
+      <%= paginate @users %>
+    </div>
   </div>
 </div>

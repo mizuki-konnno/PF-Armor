@@ -4,4 +4,6 @@ class WishList < ApplicationRecord
 
   attachment :wish_list_image
 
+  validates :wish_list_image, presence: true
+
 end

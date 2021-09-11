@@ -1,4 +1,4 @@
-<div class = "container">
+<div class = "container fade-in-bottom">
   <div class = "row">
     <div class = "col text-center my-5">
       　<h1>コーデ詳細</h1>
@@ -11,9 +11,16 @@
       <% end %>
     </div>
   </div>
+  <div class="row mt-5 ">
+    <div class="col-4 mx-auto text-center">
+      <div id="favorites_buttons_<%= @corde.id %>">
+        <%= render partial: 'favorites/favorites',locals: { corde: @corde} %>
+      </div>
+    </div>
+  </div>
   <div class = "row">
     <div class = "col-8 mx-auto">
-      <table class = "table text-center my-5">
+      <table class = "table text-center mb-5">
         <tr>
           <td colspan = "2"><%= attachment_image_tag(@corde, :corde_image, :size =>'250x300', fallback: "no_image.jpg") %></td>
         </tr>

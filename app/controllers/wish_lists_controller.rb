@@ -1,7 +1,7 @@
 class WishListsController < ApplicationController
 
   def index
-    @wish_lists = current_user.wish_list
+    @wish_lists = current_user.wish_list.page(params[:page]).per(18)
   end
 
   def new
@@ -15,8 +15,12 @@ class WishListsController < ApplicationController
   def create
     @wish_list = WishList.new(wish_list_params)
     @wish_list.user_id = current_user.id
-    @wish_list.save
+    if @wish_list.save
     redirect_to wish_lists_path
+    else
+    flash.now[:danger] = '画像を選択して下さい。'
+    render :new
+    end
   end
 
   def destroy

@@ -6,9 +6,18 @@ Rails.application.routes.draw do
 
   get "/home/about/", to: "homes#about"
 
+  get "/cordes/user_cordes", to:"cordes#user_cordes"
+
   resources :clothes, only: [:new, :create, :destroy, :index, :show]
   resources :genres, only: [:new, :create, :destroy, :index]
-  resources :cordes, only: [:new, :create, :destroy, :index, :show]
   resources :wish_lists, only: [:new, :create, :destroy, :index, :show]
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update] do
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+    get 'followers' => 'relationships#followers', as: 'followers'
+  end
+
+  resources :cordes, only: [:new, :create, :destroy, :index, :show] do
+    resource :favorites, only: [:create, :destroy]
+  end
 end

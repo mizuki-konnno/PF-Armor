@@ -10,12 +10,16 @@
   </div>
   <div class = "row">
     <% @clothes.each do |clothe| %>
-    <div class = "col-2 mt-3">
+    <div class = "col-2 mt-3 slide-bottom show">
       <%= link_to clothe_path(clothe.id) do %>
       <%= attachment_image_tag(clothe, :clothes_image, size: "120x150", fallback: "no_image.jpg") %>
       <% end %>
     </div>
     <% end %>
   </div>
-</div>
+  <div class = "row my-5" >
+    <div class = "col-3 mx-auto" >
+      <%= paginate @clothes %>
+    </div>
+  </div>
 </div>
