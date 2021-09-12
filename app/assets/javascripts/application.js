@@ -20,6 +20,7 @@
 //= require turbolinks
 //= require_tree .
 
+// 画面スクロール時の下からのフェードイン
 $(function(){
    $(window).on('load scroll', function() {
       var winScroll = $(window).scrollTop();

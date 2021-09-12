@@ -1,0 +1,3 @@
+$('#follow_button_<%= @user.id %>').html("<%= j(render partial: 'relationships/follow_button', locals: {user: @user}) %>");
+$('#followers_count_<%= @user.id %>').html('フォロー数 <%= link_to @user.followers.count,user_followers_path(@user) %>');
+$('#followings_count_<%= @user.id %>').html('フォロワー数 <%= link_to @user.followings.count,user_followings_path(@user) %>');

@@ -3,14 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+　
   has_many :cordes, dependent: :destroy
   has_many :wish_list, dependent: :destroy
   has_many :clothes, dependent: :destroy
   has_many :genres, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-
+　# フォロー機能　
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :follower
 
@@ -20,7 +20,8 @@ class User < ApplicationRecord
 
   enum gender: { 男性: 0, 女性: 1 }
   attachment :profile_image
-
+　
+　# フォロー機能　
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end

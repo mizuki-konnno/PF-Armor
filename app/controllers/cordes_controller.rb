@@ -1,7 +1,8 @@
 class CordesController < ApplicationController
-
+　# ログインしていない場合、top画面のみ表示
   before_action :authenticate_user!,except: [:index]
 
+　# gem kaminari使用のため　＃top画面
   def  index
     @cordes = Corde.page(params[:page]).per(18)
   end
@@ -17,6 +18,7 @@ class CordesController < ApplicationController
   def create
     @corde = Corde.new(corde_params)
     @corde.user_id = current_user.id
+    # バリデーションの為に追記
     if @corde.save
     redirect_to cordes_path
     else
@@ -31,7 +33,9 @@ class CordesController < ApplicationController
     redirect_to cordes_path
   end
 
+　# user毎の投稿一覧を表示
   def user_cordes
+    # 表示させるuserのidを特定
     path = Rails.application.routes.recognize_path(request.referer)
     @cordes = Corde.where(user_id: path[:id]).page(params[:page]).per(18)
   end

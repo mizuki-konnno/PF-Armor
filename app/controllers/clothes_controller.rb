@@ -1,10 +1,13 @@
 class ClothesController < ApplicationController
+
+  # gem kaminari使用のため追記
   def index
     @clothes = current_user.clothes.page(params[:page]).per(18)
   end
 
   def new
     @clothe = Clothe.new
+    # 登録時にジャンルが必要なため
     @genres = current_user.genres
   end
 
