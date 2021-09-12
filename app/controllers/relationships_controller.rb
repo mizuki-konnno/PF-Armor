@@ -14,7 +14,7 @@ class RelationshipsController < ApplicationController
     # redirect_to request.referer
   end
 
-　# フォロー一覧表示の為
+  # フォロー一覧表示の為
   def followings
     @user = User.find(params[:user_id])
     @users = @user.followings
